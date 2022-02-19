@@ -3,12 +3,15 @@ from math import floor, inf
 def MergeSort(array, p, r):
     if p < r:
         q = floor((p + r) / 2)
+        print ([p, q, r], ' ')
         MergeSort(array, p, q)
+        print(array)
         MergeSort(array, q + 1, r)
+        print(array)
         Merge(array, p, q, r)
 
 def Merge(array, p, q, r):
-    n1 = q-p
+    n1 = q-p+1
     n2 = r-q
     L = []
     R = []
@@ -30,5 +33,5 @@ def Merge(array, p, q, r):
 
 a = [2, 1, 6, 3, 4]
 print (a)
-MergeSort(a, 0, len(a) - 1)
+MergeSort(a, 0, len(a))
 print(a)
